@@ -34,6 +34,21 @@ namespace MidtermProject
                 }
             }
         }
+        public static void ReadFromFile(string fileName)
+        {
+            using StreamReader streamReader = new StreamReader(fileName);
+
+            //this is new way
+            while (!streamReader.EndOfStream)
+            {
+                Console.WriteLine(streamReader.ReadLine());
+            }
+        }
+
+        public static void DeleteFile(string fileName)
+        {
+            File.Delete(fileName);
+        }
 
 
     }
