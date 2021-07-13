@@ -6,7 +6,7 @@ namespace MidtermProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("");
+            Console.WriteLine("test");
             Console.WriteLine("This is a change");
             Console.WriteLine("Another Change");
 
