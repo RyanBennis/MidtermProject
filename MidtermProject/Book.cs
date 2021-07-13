@@ -19,7 +19,7 @@ namespace MidtermProject
 
 
         }
-        public static void UpdateFile(string fileName, List<string> linesOfInput = null)
+        public static void UpdateFile(string fileName, Dictionary<string, string> linesOfInput = null)
         {
             using StreamWriter streamWriter = new StreamWriter(fileName, true);
             if (linesOfInput == null || !linesOfInput.Any())
