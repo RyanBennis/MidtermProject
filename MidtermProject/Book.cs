@@ -19,6 +19,21 @@ namespace MidtermProject
 
 
         }
+        public static void UpdateFile(string fileName, List<string> linesOfInput = null)
+        {
+            using StreamWriter streamWriter = new StreamWriter(fileName, true);
+            if (linesOfInput == null || !linesOfInput.Any())
+            {
+                streamWriter.WriteLine("This is the book class I am adding to");
+            }
+            else
+            {
+                foreach (var line in linesOfInput)
+                {
+                    streamWriter.WriteLine(line);
+                }
+            }
+        }
 
 
     }
