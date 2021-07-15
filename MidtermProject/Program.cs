@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace MidtermProject
 {
@@ -7,39 +8,38 @@ namespace MidtermProject
     {
         static void Main(string[] args)
         {
+            //Welcome Screen, under construction 
+            // Console.WriteLine("Welcome to our Library What would you like to do?");
+            // Console.WriteLine("");
 
-            //C.R.U.D
-            //Create Read Update and Delete
-            //Create
-
-            var fileName = "LibraryFile";
-            Book.CreateFile(fileName);
-
-            //update
-            Dictionary<string, string> listOfBooks = new Dictionary<string, string>();
-
-            listOfBooks.Add("Herman Melville", "Moby Dick");
-            listOfBooks.Add("Bram Stoker", "Dracula");
-            listOfBooks.Add("William Shakespeare", "Macbeth");
-            listOfBooks.Add("Mary Shelley", "Frankenstein");
-            listOfBooks.Add("Suzanne Collins", "Mockingjay");
-            listOfBooks.Add("George Orwell", "1984");
-            listOfBooks.Add("Stephenie Meyer", "Twilight");
-            listOfBooks.Add("Stephen King", "Misery");
-            listOfBooks.Add("Emma Donoghue", "Room");
-            listOfBooks.Add("JRR Tolkien", "The Hobbit");
-            listOfBooks.Add("James Joyce", "Ulysses");
-            listOfBooks.Add("SE Hinton", "The Outsiders");
+            var libraryName = "CurrentBookList.txt";
+            Book.CreateFile(libraryName);
 
 
 
-            Book.UpdateFile(fileName, listOfBooks);
 
-            //Read
-            Book.ReadFromFile(fileName);
+
+            var library = new Book();
+            var books = library.DisplayLibrary();
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Title} by {book.Author}");
+
+            }
+
+            var test = new List<Book>(library.DisplayLibrary());
+
+           var libraryContents = Book.UpdateFile(libraryName, test);
+
+
+
+            // Book.UpdateFile(fileName, listOfBooks);
+
+            ////Read
+            //Book.ReadFromFile(fileName);
 
             //Delete
-            Book.DeleteFile(fileName);
+          //  Book.DeleteFile(libraryName);
 
         }
     }
