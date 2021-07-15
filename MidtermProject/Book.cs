@@ -57,7 +57,7 @@ namespace MidtermProject
 
 
         }
-        public static void UpdateFile(string fileName, Dictionary<string, string> linesOfInput = null)
+        public static void UpdateFile(string fileName, List<Book> linesOfInput = null)
         {
             using StreamWriter streamWriter = new StreamWriter(fileName, true);
             if (linesOfInput == null || !linesOfInput.Any())
@@ -82,6 +82,11 @@ namespace MidtermProject
                 Console.WriteLine(streamReader.ReadLine());
             }
         }
+        //public static void CopyToFile(string fileName, Dictionary<string, string> linesOfInput = null)
+        //{
+        //    System.IO.File.WriteAllText(fileName, linesOfInput);
+        //}
+
 
         public static void DeleteFile(string fileName)
         {
