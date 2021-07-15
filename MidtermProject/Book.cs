@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -57,20 +56,25 @@ namespace MidtermProject
 
 
         }
+        public static string UpdateFile(string fileName, List<Book> linesOfInput = null)
         public static void UpdateFile(string fileName, List<Book> linesOfInput = null)
         {
-            using StreamWriter streamWriter = new StreamWriter(fileName, true);
-            if (linesOfInput == null || !linesOfInput.Any())
-            {
-                streamWriter.WriteLine("This is the book class I am adding to");
+            //using StreamWriter streamWriter = new StreamWriter(fileName, false);
+
+
+            var library = new Book();
+            var books = library.DisplayLibrary();
+            //File.WriteAllText(fileName,$"{library.Title} by {library.Author}");
+
+            foreach (var book in linesOfInput)
+           {
+
+                Console.WriteLine(($"{book.Title} by {book.Author}"));
+
             }
-            else
-            {
-                foreach (var line in linesOfInput)
-                {
-                    streamWriter.WriteLine(line);
-                }
-            }
+
+
+            return "test";
         }
         public static void ReadFromFile(string fileName)
         {
@@ -94,5 +98,25 @@ namespace MidtermProject
         }
 
 
+    }
+}
+        public List<Book> DisplayLibrary()
+        {
+            List<Book> bookList = new List<Book>();
+            bookList.Add(new Book("Herman Melville", "Moby Dick", true, DateTime.Today));
+            bookList.Add(new Book("Bram Stoker", "Dracula", true, DateTime.Today));
+            bookList.Add(new Book("William Shakespeare", "Macbeth", true, DateTime.Today));
+            bookList.Add(new Book("Mary Shelley", "Frankenstein", true, DateTime.Today));
+            bookList.Add(new Book("Suzanne Collins", "Mockingjay", true, DateTime.Today));
+            bookList.Add(new Book("George Orwell", "1984", false, DateTime.Today));
+            bookList.Add(new Book("Stephenie Meyer", "Twilight", false, DateTime.Today));
+            bookList.Add(new Book("Stephen King", "Misery", true, DateTime.Today));
+            bookList.Add(new Book("Emma Donoghue", "Room", true, DateTime.Today));
+            bookList.Add(new Book("JRR Tolkien", "The Hobbit", true, DateTime.Today));
+            bookList.Add(new Book("James Joyce", "Ulysses", false, DateTime.Today));
+            bookList.Add(new Book("SE Hinton", "The Outsiders", false, DateTime.Today));
+
+            return bookList;
+        }
     }
 }

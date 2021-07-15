@@ -9,6 +9,29 @@ namespace MidtermProject
     {
         static void Main(string[] args)
         {
+            //Welcome Screen, under construction 
+            // Console.WriteLine("Welcome to our Library What would you like to do?");
+            // Console.WriteLine("");
+
+            var libraryName = "CurrentBookList.txt";
+            Book.CreateFile(libraryName);
+
+
+
+
+
+            var library = new Book();
+            var books = library.DisplayLibrary();
+            foreach (var book in books)
+            {
+                Console.WriteLine($"{book.Title} by {book.Author}");
+
+            }
+
+            var test = new List<Book>(library.DisplayLibrary());
+
+           var libraryContents = Book.UpdateFile(libraryName, test);
+
             string continueFlag;
             Console.WriteLine("Welcome to our Library, We are happy you are here");
 
@@ -81,12 +104,13 @@ namespace MidtermProject
 
             }
             //Book.UpdateFile(fileName, listOfBooks);
+            // Book.UpdateFile(fileName, listOfBooks);
 
             ////Read
             //Book.ReadFromFile(fileName);
 
-            ////Delete
-            //Book.DeleteFile(fileName);
+            //Delete
+          //  Book.DeleteFile(libraryName);
 
         
     }
