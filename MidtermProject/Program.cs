@@ -12,7 +12,7 @@ namespace MidtermProject
             //Create Read Update and Delete
             //Create
 
-            var fileName = "LibraryFile";
+            var fileName = "LibraryFile.txt";
             Book.CreateFile(fileName);
 
             //update

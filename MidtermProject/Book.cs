@@ -44,6 +44,11 @@ namespace MidtermProject
                 Console.WriteLine(streamReader.ReadLine());
             }
         }
+        public static void CopyToFile(string fileName, Dictionary<string, string> linesOfInput = null)
+        {
+            System.IO.File.WriteAllText(fileName, linesOfInput);
+        }
+
 
         public static void DeleteFile(string fileName)
         {
