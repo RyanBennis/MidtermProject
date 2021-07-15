@@ -27,6 +27,8 @@ namespace MidtermProject
 
             }
 
+            Console.WriteLine("This is the work I've been doing");
+
             var test = new List<Book>(library.DisplayLibrary());
 
            var libraryContents = Book.UpdateFile(libraryName, test);
