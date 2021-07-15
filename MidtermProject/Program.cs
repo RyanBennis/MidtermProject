@@ -22,7 +22,8 @@ namespace MidtermProject
                     Console.WriteLine($"This book is currently checked out and will be available {book.DueDate}");
                 }
             }
- 
+
+            Console.WriteLine("This is the work I've been doing");
 
 
             //Book.UpdateFile(fileName, listOfBooks);
