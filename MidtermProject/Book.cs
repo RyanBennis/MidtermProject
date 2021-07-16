@@ -100,23 +100,4 @@ namespace MidtermProject
 
     }
 }
-        public List<Book> DisplayLibrary()
-        {
-            List<Book> bookList = new List<Book>();
-            bookList.Add(new Book("Herman Melville", "Moby Dick", true, DateTime.Today));
-            bookList.Add(new Book("Bram Stoker", "Dracula", true, DateTime.Today));
-            bookList.Add(new Book("William Shakespeare", "Macbeth", true, DateTime.Today));
-            bookList.Add(new Book("Mary Shelley", "Frankenstein", true, DateTime.Today));
-            bookList.Add(new Book("Suzanne Collins", "Mockingjay", true, DateTime.Today));
-            bookList.Add(new Book("George Orwell", "1984", false, DateTime.Today));
-            bookList.Add(new Book("Stephenie Meyer", "Twilight", false, DateTime.Today));
-            bookList.Add(new Book("Stephen King", "Misery", true, DateTime.Today));
-            bookList.Add(new Book("Emma Donoghue", "Room", true, DateTime.Today));
-            bookList.Add(new Book("JRR Tolkien", "The Hobbit", true, DateTime.Today));
-            bookList.Add(new Book("James Joyce", "Ulysses", false, DateTime.Today));
-            bookList.Add(new Book("SE Hinton", "The Outsiders", false, DateTime.Today));
-
-            return bookList;
-        }
-    }
-}
+        
