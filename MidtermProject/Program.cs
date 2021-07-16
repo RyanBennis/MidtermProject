@@ -12,8 +12,8 @@ namespace MidtermProject
             // Console.WriteLine("Welcome to our Library What would you like to do?");
             // Console.WriteLine("");
 
-            var libraryName = "CurrentBookList.txt";
-            Book.CreateFile(libraryName);
+            //var libraryName = "CurrentBookList.txt";
+            //Book.CreateFile(libraryName);
 
 
 
@@ -31,7 +31,7 @@ namespace MidtermProject
 
             var test = new List<Book>(library.DisplayLibrary());
 
-           var libraryContents = Book.UpdateFile(libraryName, test);
+            //var libraryContents = Book.UpdateFile(libraryName, test);
 
 
 

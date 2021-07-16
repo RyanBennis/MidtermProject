@@ -11,7 +11,7 @@ namespace MidtermProject
 
         public string Title { get; set; }
 
-        public bool InLibrary { get; set; }
+        public BookStatus InLibrary { get; set; }
 
         public DateTime DueDate { get; set; }
 
@@ -20,11 +20,10 @@ namespace MidtermProject
         }
             
 
-        public Book(string author, string title, bool inLibrary, DateTime dueDate )
+        public Book(string author, string title, Enum inLibrary, DateTime dueDate )
         {
             Author = author;
             Title = title;
-            InLibrary = inLibrary;
             DueDate = dueDate;
         }
 
@@ -32,18 +31,18 @@ namespace MidtermProject
         public List<Book> DisplayLibrary()
         {
             List<Book> bookList = new List<Book>();
-            bookList.Add(new Book("Herman Melville", "Moby Dick", true, DateTime.Today));
-            bookList.Add(new Book("Bram Stoker", "Dracula", true, DateTime.Today));
-            bookList.Add(new Book("William Shakespeare", "Macbeth", true, DateTime.Today));
-            bookList.Add(new Book("Mary Shelley", "Frankenstein", true, DateTime.Today));
-            bookList.Add(new Book("Suzanne Collins", "Mockingjay", true, DateTime.Today));
-            bookList.Add(new Book("George Orwell", "1984", false, DateTime.Today));
-            bookList.Add(new Book("Stephenie Meyer", "Twilight", false, DateTime.Today));
-            bookList.Add(new Book("Stephen King", "Misery", true, DateTime.Today));
-            bookList.Add(new Book("Emma Donoghue", "Room", true, DateTime.Today));
-            bookList.Add(new Book("JRR Tolkien", "The Hobbit", true, DateTime.Today));
-            bookList.Add(new Book("James Joyce", "Ulysses", false, DateTime.Today));
-            bookList.Add(new Book("SE Hinton", "The Outsiders", false, DateTime.Today));
+            bookList.Add(new Book("Herman Melville", "Moby Dick", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Bram Stoker", "Dracula", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("William Shakespeare", "Macbeth", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Mary Shelley", "Frankenstein", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Suzanne Collins", "Mockingjay", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("George Orwell", "1984", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Stephenie Meyer", "Twilight", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Stephen King", "Misery", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("Emma Donoghue", "Room", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("JRR Tolkien", "The Hobbit", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("James Joyce", "Ulysses", BookStatus.On_Shelf, DateTime.Today));
+            bookList.Add(new Book("SE Hinton", "The Outsiders", BookStatus.On_Shelf, DateTime.Today));
 
             return bookList;
         }
