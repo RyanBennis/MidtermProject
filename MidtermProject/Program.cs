@@ -11,10 +11,12 @@ namespace MidtermProject
             Console.WriteLine("Welcome to our Library, We are happy you are here");
 
 
+
             var libraryName = "CurrentBookList.txt";
             FileIO.CreateFile(libraryName);
             do
             {
+
                 Console.WriteLine("Here are the books that we have in our Library");
                 var library = new Book();
                 var books = library.DisplayLibrary();
@@ -37,10 +39,15 @@ namespace MidtermProject
             //var libraryContents = FileIO.UpdateFile(libraryName, test);
 
             // Book.UpdateFile(fileName, listOfBooks);
+
             ////Read
             //Book.ReadFromFile(fileName);
             //Delete
+
             //  Book.DeleteFile(libraryName);
         }
+
+
+    
     }
 }

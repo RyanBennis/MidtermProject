@@ -16,21 +16,19 @@ namespace MidtermProject
 
 
         }
-        public static string UpdateFile(string fileName, List<Book> linesOfInput = null)
+        public static string UpdateFile(string fileName, List<Book> linesOfInput)
         {
-            //using StreamWriter streamWriter = new StreamWriter(fileName, false);
+            using StreamWriter streamWriter = new StreamWriter(fileName, false);
 
-
-            var library = new Book();
-            var books = library.DisplayLibrary();
-            //File.WriteAllText(fileName,$"{library.Title} by {library.Author}");
-
+           // var library = new Book();
+            //var linesOfInput = library.DisplayLibrary();
             foreach (var book in linesOfInput)
             {
-
-                Console.WriteLine(($"{book.Title} by {book.Author}"));
+                streamWriter.WriteLine($"{book.Title}, {book.Author}, {book.DueDate},{book.InLibrary}");
 
             }
+
+           // streamWriter.WriteLine("test");
 
 
             return "test";
