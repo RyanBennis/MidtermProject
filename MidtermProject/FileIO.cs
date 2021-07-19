@@ -33,15 +33,21 @@ namespace MidtermProject
 
             return "test";
         }
-        public static void ReadFromFile(string fileName)
+        public static List<Book> ReadFromFile(string fileName)
         {
+            string line;
+            List<Book> libraryFromFile = new List<Book>();
             using StreamReader streamReader = new StreamReader(fileName);
-
-            //this is new way
-            while (!streamReader.EndOfStream)
+            while ((line = streamReader.ReadLine()) != null)
             {
-                Console.WriteLine(streamReader.ReadLine());
+                string[] info = line.Split(", ");
+                libraryFromFile.Add(new Book(
+                    info[0],
+                    info[1],
+                    Enum.Parse<BookStatus>(info[3]),
+                    DateTime.Parse(info[4])));
             }
+            return libraryFromFile;
         }
 
         public static void DeleteFile(string fileName)
