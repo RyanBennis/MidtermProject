@@ -20,11 +20,11 @@ namespace MidtermProject
         }
             
 
-        public Book(string author, string title, Enum inLibrary, DateTime dueDate )
+        public Book(string author, string title, BookStatus inLibrary, DateTime dueDate )
         {
             Author = author;
             Title = title;
-            Enum InLibrary = inLibrary;
+            InLibrary = inLibrary;
             DueDate = dueDate;
         }
 

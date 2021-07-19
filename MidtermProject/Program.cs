@@ -13,13 +13,14 @@ namespace MidtermProject
 
 
             var libraryName = "CurrentBookList.txt";
+            var library = new Book();
+            var books = library.DisplayLibrary();
             FileIO.CreateFile(libraryName);
             do
             {
 
                 Console.WriteLine("Here are the books that we have in our Library");
-                var library = new Book();
-                var books = library.DisplayLibrary();
+                
                 foreach (var book in books)
                 {
                     Console.WriteLine($"{book.Title} by {book.Author}");
@@ -38,7 +39,7 @@ namespace MidtermProject
             //var test = new List<Book>(library.DisplayLibrary());
             //var libraryContents = FileIO.UpdateFile(libraryName, test);
 
-            // Book.UpdateFile(fileName, listOfBooks);
+            FileIO.UpdateFile(libraryName, books);
 
             ////Read
             //Book.ReadFromFile(fileName);
@@ -48,6 +49,6 @@ namespace MidtermProject
         }
 
 
-    
+
     }
 }
