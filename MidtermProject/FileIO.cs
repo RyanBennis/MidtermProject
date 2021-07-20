@@ -42,8 +42,8 @@ namespace MidtermProject
             {
                 string[] info = line.Split(", ");
                 libraryFromFile.Add(new Book(
-                    info[1],
                     info[0],
+                    info[1],
                     Enum.Parse<BookStatus>(info[2]),
                     DateTime.Parse(info[3])));
             }

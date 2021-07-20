@@ -22,8 +22,8 @@ namespace MidtermProject
 
         public Book(string title , string author, BookStatus inLibrary, DateTime dueDate )
         {
-            Author = author;
             Title = title;
+            Author = author;
             InLibrary = inLibrary;
             DueDate = dueDate;
         }
