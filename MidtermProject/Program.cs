@@ -15,7 +15,7 @@ namespace MidtermProject
             var libraryName = "CurrentBookList.txt";
             var library = new Book();
             var books = library.DisplayLibrary();
-            FileIO.CreateFile(libraryName);
+            //FileIO.CreateFile(libraryName);
             do
             {
 
@@ -32,6 +32,7 @@ namespace MidtermProject
                 var searchedBooks = searchMethod.Titles(books, searchAuthor);
                 var userInput1 = new UserInput();
                 continueFlag = userInput1.GetUserInput("Do you want to continue (y/n)");
+                  FileIO.UpdateFile(libraryName, books);
             } while (continueFlag == "y");
 
 
@@ -39,8 +40,7 @@ namespace MidtermProject
             //var test = new List<Book>(library.DisplayLibrary());
             //var libraryContents = FileIO.UpdateFile(libraryName, test);
 
-            FileIO.UpdateFile(libraryName, books);
-
+         
             ////Read
             //Book.ReadFromFile(fileName);
             //Delete
