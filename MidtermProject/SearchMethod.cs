@@ -19,6 +19,7 @@ namespace MidtermProject
                 if (input == book.Title && book.InLibrary == BookStatus.On_Shelf || input == book.Author && book.InLibrary == BookStatus.On_Shelf)
                 {
                     Console.WriteLine($" Thank you for checking out {book.Title}, please return the book on {book.DueDate.AddDays(14)}");
+                    book.InLibrary = BookStatus.Checked_Out;
                 }
                 else if (input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
                 {

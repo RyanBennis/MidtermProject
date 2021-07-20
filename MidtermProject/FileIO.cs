@@ -24,7 +24,7 @@ namespace MidtermProject
             //var linesOfInput = library.DisplayLibrary();
             foreach (var book in linesOfInput)
             {
-                streamWriter.WriteLine($"{book.Title}, {book.Author}, {book.DueDate},{book.InLibrary}");
+                streamWriter.WriteLine($"{book.Title}, {book.Author}, {book.InLibrary}, {book.DueDate}");
 
             }
 
@@ -44,8 +44,8 @@ namespace MidtermProject
                 libraryFromFile.Add(new Book(
                     info[0],
                     info[1],
-                    Enum.Parse<BookStatus>(info[3]),
-                    DateTime.Parse(info[4])));
+                    Enum.Parse<BookStatus>(info[2]),
+                    DateTime.Parse(info[3])));
             }
             return libraryFromFile;
         }
