@@ -30,6 +30,10 @@ namespace MidtermProject
 
                 var searchMethod = new SearchMethod();
                 var searchedBooks = searchMethod.Titles(books, searchAuthor);
+
+                var returnBook = new ReturnBook();
+                var returnbooks = returnBook.Return(books, searchAuthor);
+
                 var userInput1 = new UserInput();
                 continueFlag = userInput1.GetUserInput("Do you want to continue (y/n)");
             } while (continueFlag == "y");
