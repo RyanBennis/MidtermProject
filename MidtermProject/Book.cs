@@ -13,6 +13,7 @@ namespace MidtermProject
 
         public BookStatus InLibrary { get; set; }
 
+
         public DateTime DueDate { get; set; }
 
         public Book()
@@ -26,6 +27,7 @@ namespace MidtermProject
             Author = author;
             InLibrary = inLibrary;
             DueDate = dueDate;
+            
         }
 
 
