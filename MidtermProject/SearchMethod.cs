@@ -7,7 +7,7 @@ namespace MidtermProject
 {
     public class SearchMethod
     {
-
+        
         public List<Book> Titles(List<Book> books, string input)
         {
             
@@ -20,6 +20,7 @@ namespace MidtermProject
                 {
                     Console.WriteLine($" Thank you for checking out {book.Title}, please return the book on {book.DueDate.AddDays(14)}");
                     book.InLibrary = BookStatus.Checked_Out;
+                    book.DueDate = DateTime.Today.AddDays(14);
                 }
                 else if (input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
                 {
