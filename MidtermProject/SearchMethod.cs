@@ -25,6 +25,18 @@ namespace MidtermProject
                 else if (input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
                 {
                     Console.WriteLine($"{book.Title} is not available, it was due to be returned on {book.DueDate}");
+                    if (book.DueDate >= DateTime.Today)
+                    {
+                        book.InLibrary = BookStatus.Overdue;
+                        Console.WriteLine($"{book.Title} is not available, it was due to be returned on {book.DueDate}");
+
+                    }
+                    else if (book.InLibrary == BookStatus.Overdue)
+                    {
+                        Console.WriteLine($"{book.Title} is not available, it was due to be returned on {book.DueDate}");
+
+                    }
+
                 }
                 else if (input == book.Title && book.InLibrary == BookStatus.Lost || input == book.Author && book.InLibrary == BookStatus.Lost)
                 {

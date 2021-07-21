@@ -23,6 +23,7 @@ namespace MidtermProject
             //var books = library.DisplayLibrary();
             //FileIO.CreateFile(libraryName);
 
+
             do
             {
                 Console.WriteLine("Here are the books that we have in our Library");   
@@ -60,9 +61,11 @@ namespace MidtermProject
                 }
                 var userInput1 = new UserInput();
                 continueFlag = userInput1.GetUserInput("Do you want to continue (y/n)");
+                  FileIO.UpdateFile(libraryName, books);
             } while (continueFlag == "y");
 
             FileIO.UpdateFile(libraryName, books);
+
         }
 
 
