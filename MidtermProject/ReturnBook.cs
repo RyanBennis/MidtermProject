@@ -22,8 +22,9 @@ namespace MidtermProject
                 else if(input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
                 {
                     //Need number of days overdue
-                    Console.WriteLine($"Thank you for returning {book.Title}, it was /*numberOfDaysOverdue*/ days overdue");
+                    Console.WriteLine($"Thank you for returning {book.Title}, it was {(DateTime.Today - book.DueDate).TotalDays}  days overdue");
                     book.InLibrary = BookStatus.On_Shelf;
+                    book.DueDate = DateTime.Today;
                 }
                 else if(input == book.Title && book.InLibrary == BookStatus.Lost || input == book.Author && book.InLibrary == BookStatus.Lost)
                 {
