@@ -7,32 +7,26 @@ namespace MidtermProject
 {
     class FileIO
     {
+        //Do we need this?
+
         public static void CreateFile(string fileName)
         {
             if (!File.Exists(fileName))
             {
                 File.Create(fileName);
             }
-
-
         }
-        public static string UpdateFile(string fileName, List<Book> linesOfInput)
+
+        public static void UpdateFile(string fileName, List<Book> linesOfInput)
         {
             using StreamWriter streamWriter = new StreamWriter(fileName, false);
 
-           // var library = new Book();
-            //var linesOfInput = library.DisplayLibrary();
             foreach (var book in linesOfInput)
             {
                 streamWriter.WriteLine($"{book.Title}, {book.Author}, {book.InLibrary}, {book.DueDate}");
-
             }
-
-           // streamWriter.WriteLine("test");
-
-
-            return "test";
         }
+
         public static List<Book> ReadFromFile(string fileName)
         {
             string line;
@@ -49,6 +43,8 @@ namespace MidtermProject
             }
             return libraryFromFile;
         }
+
+        //Do we need this?
 
         public static void DeleteFile(string fileName)
         {

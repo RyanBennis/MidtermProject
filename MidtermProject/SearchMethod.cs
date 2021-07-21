@@ -7,7 +7,7 @@ namespace MidtermProject
 {
     public class SearchMethod
     {
-
+        
         public List<Book> Titles(List<Book> books, string input)
         {
             
