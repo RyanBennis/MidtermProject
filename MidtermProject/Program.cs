@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 namespace MidtermProject
 {
     class Program
     {
         static void Main(string[] args)
         {
+           // Console.BackgroundColor = ConsoleColor.;
+            Console.ForegroundColor = ConsoleColor.White;
             string continueFlag;
             Console.WriteLine("Welcome to our Library, We are happy you are here");
 
@@ -26,6 +29,7 @@ namespace MidtermProject
 
             do
             {
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Here are the books that we have in our Library");   
                 foreach (var book in books)
                 {
@@ -57,11 +61,48 @@ namespace MidtermProject
                 }
                 else
                 {
-                    Console.WriteLine("That is not a valid response");
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("THAT IS NOT A VALID RESPONSE");
                 }
                 var userInput1 = new UserInput();
                 continueFlag = userInput1.GetUserInput("Do you want to continue (y/n)");
-                  FileIO.UpdateFile(libraryName, books);
+
+               
+
+               static void setToOverdue(List<Book> Book)
+                {
+
+                    //var test = new Book();
+
+                    foreach (var book in Book)
+                    {
+                        if (book.DueDate <= DateTime.Today && book.InLibrary == BookStatus.Checked_Out)
+                        {
+                            book.InLibrary = BookStatus.Overdue;
+
+
+                        }
+                    }
+
+                    
+
+                }
+
+                //var example = BookStatus.Overdue;
+
+                setToOverdue(books);
+
+                //if ( test.DueDate >= DateTime.Today &&  test.InLibrary == BookStatus.Checked_Out)
+                //{
+                //    var test2 = new Book();
+
+
+
+
+
+                //}
+
+                FileIO.UpdateFile(libraryName, books);
             } while (continueFlag == "y");
 
             FileIO.UpdateFile(libraryName, books);

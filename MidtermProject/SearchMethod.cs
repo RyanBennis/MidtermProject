@@ -10,8 +10,8 @@ namespace MidtermProject
         
         public List<Book> Titles(List<Book> books, string input)
         {
-            
-            var results = books.Where(book => book.Title == input || book.Author == input).ToList();
+
+            var results = books.Where(book => (book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase)) || (book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase))).ToList();
 
 
             foreach (var book in results)
