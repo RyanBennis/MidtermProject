@@ -70,7 +70,7 @@ namespace MidtermProject
                     Console.WriteLine("THAT IS NOT A VALID RESPONSE");
                 }
                 var userInput1 = new UserInput();
-                continueFlag = userInput1.GetUserInput("Do you want to continue (y/n)");
+                continueFlag = userInput1.doYouWantToContinue();
 
                
 

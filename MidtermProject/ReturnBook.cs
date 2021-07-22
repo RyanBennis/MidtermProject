@@ -10,26 +10,26 @@ namespace MidtermProject
         public List<Book> Return(List<Book> books, string input)
         {
 
-            var resultsReturn = books.Where(book => (book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase)) || (book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase))).ToList();
+            var resultsReturn = books.Where(book => book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase) || book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
 
             foreach (var book in resultsReturn)
             {
-                if (input == book.Title && book.InLibrary == BookStatus.Checked_Out || input == book.Author && book.InLibrary == BookStatus.Checked_Out)
+                if (book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Checked_Out || book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Checked_Out)
                 {
                     Console.WriteLine($"Thank you for returning {book.Title}");
                     book.InLibrary = BookStatus.On_Shelf;
                     book.DueDate = DateTime.Today;
 
                 }
-                else if(input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
+                else if(book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Overdue || book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Overdue)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Thank you for returning {book.Title}, it was {(DateTime.Today - book.DueDate).TotalDays}  days overdue");
                     book.InLibrary = BookStatus.On_Shelf;
                     book.DueDate = DateTime.Today;
                 }
-                else if(input == book.Title && book.InLibrary == BookStatus.Lost || input == book.Author && book.InLibrary == BookStatus.Lost)
+                else if(book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Lost || book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Lost)
                 {
                     Console.WriteLine($"Thank you for returning {book.Title}, we thought it lost");
                     book.InLibrary = BookStatus.On_Shelf;
