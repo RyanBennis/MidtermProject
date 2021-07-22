@@ -17,18 +17,22 @@ namespace MidtermProject
                 input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input))
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid input");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
-                //if(input <> 'y' || )
+                
                 else if (!ValidateUserInputForBooks(input))
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("You didn't enter a valid book");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             } while (string.IsNullOrWhiteSpace(input));
             return input;
         }
 
-        public  string doYouWantToContinue()
+        public  string DoYouWantToContinue()
         {
             string input2;
             do
@@ -37,7 +41,9 @@ namespace MidtermProject
                 input2 = Console.ReadLine();
                 if (string.IsNullOrEmpty(input2))
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid input");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
             } while (string.IsNullOrEmpty(input2));
             return input2;
@@ -53,7 +59,5 @@ namespace MidtermProject
                                   x.Title.Equals(message, StringComparison.InvariantCultureIgnoreCase));
             return result != null;
         }
-        
-
     }
 }

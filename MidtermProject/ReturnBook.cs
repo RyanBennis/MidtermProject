@@ -28,6 +28,7 @@ namespace MidtermProject
                     Console.WriteLine($"Thank you for returning {book.Title}, it was {(DateTime.Today - book.DueDate).TotalDays}  days overdue");
                     book.InLibrary = BookStatus.On_Shelf;
                     book.DueDate = DateTime.Today;
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 else if(book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Lost || book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase) && book.InLibrary == BookStatus.Lost)
                 {
