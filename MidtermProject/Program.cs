@@ -11,7 +11,7 @@ namespace MidtermProject
            // Console.BackgroundColor = ConsoleColor.;
             Console.ForegroundColor = ConsoleColor.White;
             string continueFlag;
-            Console.WriteLine("Welcome to our Library, We are happy you are here");
+            Console.WriteLine("Welcome to our Library, We are happy you are here!");
 
             var libraryName = "CurrentBookList.txt";
 
@@ -32,7 +32,7 @@ namespace MidtermProject
             {
 
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine("Here are the books that we have in our Library");   
+                Console.WriteLine("\n\rHere are the books that we have in our Library:\n\r");   
 
                 foreach (var book in books)
                 {
@@ -41,8 +41,8 @@ namespace MidtermProject
 
                 Console.WriteLine("\n\rThere are a few things you can do here:\n\r");
                 Console.WriteLine("1. Checkout a book");
-                Console.WriteLine("2. Return a book");
-                Console.WriteLine("3. Add a book to the library\n\r");
+                Console.WriteLine("2. Return a book\n\r");
+                //Console.WriteLine("3. Add a book to the library\n\r");
 
                 Console.WriteLine("Please choose a number");
                 var uI = new UserInput();
@@ -60,21 +60,22 @@ namespace MidtermProject
                     var returnBook = new ReturnBook();
                     var returnbooks = returnBook.Return(books, searchAuthor2);
                 }
-                else if (userInput == "3")
-                {
-                    Console.WriteLine("Work in Progress");
-                }
+                //else if (userInput == "3")
+                //{
+                //    Console.WriteLine("Work in Progress");
+                //}
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("THAT IS NOT A VALID RESPONSE");
+                    Console.ForegroundColor = ConsoleColor.White;
                 }
                 var userInput1 = new UserInput();
-                continueFlag = userInput1.doYouWantToContinue();
+                continueFlag = userInput1.DoYouWantToContinue();
 
                
 
-               static void setToOverdue(List<Book> Book)
+               static void SetToOverdue(List<Book> Book)
                 {
 
                     //var test = new Book();
@@ -95,7 +96,7 @@ namespace MidtermProject
 
                 //var example = BookStatus.Overdue;
 
-                setToOverdue(books);
+                SetToOverdue(books);
 
                 //if ( test.DueDate >= DateTime.Today &&  test.InLibrary == BookStatus.Checked_Out)
                 //{
