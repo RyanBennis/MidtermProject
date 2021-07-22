@@ -12,18 +12,30 @@ namespace MidtermProject
             string input;
             do
             {
-                // print message
+                
                 Console.WriteLine(message);
-                // get input
                 input = Console.ReadLine();
                 if (string.IsNullOrWhiteSpace(input))
                 {
                     Console.WriteLine("Invalid input");
                 }
-                // if invalid go back to top
+                else if (!ValidateUserInputForBooks(input))
+                {
+                    Console.WriteLine("You didn't enter a valid book");
+                }
             } while (string.IsNullOrWhiteSpace(input));
             return input;
         }
+        private bool ValidateUserInputForBooks(string message)
+        {
+            var book = new Book();
+            var allBooks = book.DisplayLibrary();
+            var result = allBooks.SingleOrDefault(x =>
+                                  x.Author == message ||
+                                  x.Title == message);
+            return result != null;
+        }
         
+
     }
 }
