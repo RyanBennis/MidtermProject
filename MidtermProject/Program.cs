@@ -30,8 +30,10 @@ namespace MidtermProject
 
             do
             {
+
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Here are the books that we have in our Library");   
+
                 foreach (var book in books)
                 {
                     Console.WriteLine($"{book.Title} by {book.Author}");
@@ -41,8 +43,10 @@ namespace MidtermProject
                 Console.WriteLine("1. Checkout a book");
                 Console.WriteLine("2. Return a book");
                 Console.WriteLine("3. Add a book to the library\n\r");
+
+                Console.WriteLine("Please choose a number");
                 var uI = new UserInput();
-                string userInput = uI.GetUserInput("Please choose a number");
+                string userInput = Console.ReadLine();
 
                 if (userInput == "1")
                 {
