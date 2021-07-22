@@ -10,7 +10,8 @@ namespace MidtermProject
         public List<Book> Return(List<Book> books, string input)
         {
 
-            var resultsReturn = books.Where(book => book.Title == input || book.Author == input).ToList();
+            var resultsReturn = books.Where(book => (book.Title.Equals(input, StringComparison.InvariantCultureIgnoreCase)) || (book.Author.Equals(input, StringComparison.InvariantCultureIgnoreCase))).ToList();
+
 
             foreach (var book in resultsReturn)
             {
@@ -18,10 +19,12 @@ namespace MidtermProject
                 {
                     Console.WriteLine($"Thank you for returning {book.Title}");
                     book.InLibrary = BookStatus.On_Shelf;
+                    book.DueDate = DateTime.Today;
+
                 }
                 else if(input == book.Title && book.InLibrary == BookStatus.Overdue || input == book.Author && book.InLibrary == BookStatus.Overdue)
                 {
-                    //Need number of days overdue
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"Thank you for returning {book.Title}, it was {(DateTime.Today - book.DueDate).TotalDays}  days overdue");
                     book.InLibrary = BookStatus.On_Shelf;
                     book.DueDate = DateTime.Today;
@@ -30,6 +33,8 @@ namespace MidtermProject
                 {
                     Console.WriteLine($"Thank you for returning {book.Title}, we thought it lost");
                     book.InLibrary = BookStatus.On_Shelf;
+                    book.DueDate = DateTime.Today;
+
                 }
                 else
                 {
